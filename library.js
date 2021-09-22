@@ -5,11 +5,9 @@ const inputTitle = document.getElementById("title");
 const inputPages = document.getElementById("pages");
 const inputRead = document.getElementById("toggleButton");
 const submitted = document.getElementById("submit");
-let bookAuthor
-let bookTitle
-let bookPages
-let bookRead
+const booksContainer = [];
 
+console.log(booksContainer)
 console.log(inputAuthor.value);
 console.log(inputTitle);
 console.log(inputPages);
@@ -22,8 +20,12 @@ submitted.addEventListener("click",function(){
     let bookTitle = inputTitle.value;
     let bookPages = inputPages.value;
     let bookRead = inputRead.checked;
-    let newBook = new Book(bookAuthor,bookTitle,bookPages,bookRead);
-    console.log(newBook);
+    if (bookAuthor && bookTitle && bookPages){
+        booksContainer.push(new Book(bookAuthor,bookTitle,bookPages,bookRead));
+        console.log(booksContainer);
+        clearAll();
+    }
+    
 });
 
 //Constructor
@@ -31,10 +33,15 @@ function Book(title,author,pages,read){
     this.title = title,
     this.author = author,
     this.pages = pages,
-    this.read = read,
-    this.show = function(){
-        console.log(`Author: ${this.author} Title: ${this.title} Pages: ${this.pages}`)
-    }
+    this.read = read
 }
+
 let book1 = new Book("One Piece","Oda Sensei",1500,true);
-book1.show();
+
+//functions
+function clearAll(){
+inputAuthor.value = "";
+inputTitle.value ="";
+inputPages.value ="";
+inputRead.checked = false;
+}
