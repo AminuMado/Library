@@ -16,7 +16,7 @@
         </nav>
     </header>
     <div>
-        <form>
+        <form onsubmit="return false">
             <ul>
                 <li>
                   <label for="author">Autor:</label>
@@ -32,10 +32,10 @@
                 </li>
                 <li>
                     <label for="toggleButton" class="text">Read</label>
-                    <input type="checkbox" id="toggleButton" class="toggleButton">
+                    <input type="checkbox" id="toggleButton" class="toggleButton" value="off">
                 </li>
                 <li>
-                    <button id="createBook">Create Book</button>
+                    <button id="submit">Submit</button>
                 </li>
             </ul>
         </form>
