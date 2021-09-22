@@ -109,3 +109,44 @@ button {
     background-color:#008000;
     border: 1px solid #008000;
 }
+/* These rules are for the books */
+
+.booksContainer{
+	display: flex;
+	justify-content: center;
+}
+.book{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    position: relative;
+    border: 2px solid;
+    border-radius: 10px;
+    min-width: 350px;
+
+
+}
+.delete{
+	position: absolute;
+	left: 95%;
+	top: -15px;
+	/* margin: 0; */
+}
+.bookTitle{
+    margin: 10px 0 5px 0;
+    
+}
+.bookAuthor{
+    margin: 5px 0 5px 0;
+}
+.sep{
+    border-top: 1px solid;
+    margin:5px 0 5px 0;
+    width: 97%;
+}
+.pages{
+    margin:5px 0 5px 0;
+}
+.bookToggle{
+    margin:5px 0 10px 0;
+}
