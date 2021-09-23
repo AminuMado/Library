@@ -156,12 +156,12 @@ button {
 .bookAuthor{
     margin: 5px 0 5px 0;
 }
-.sep{
+.seperator{
     border-top: 1px solid;
     margin:5px 0 5px 0;
     width: 97%;
 }
-.pages{
+.bookPages{
     margin:5px 0 5px 0;
 }
 .bookToggle{
