@@ -1,3 +1,8 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 form {
     /* Center the form on the page */
     margin: 0 auto;
@@ -113,7 +118,10 @@ button {
 
 .booksContainer{
 	display: flex;
+    flex-wrap: wrap;
 	justify-content: center;
+    gap: 25px;
+
 }
 .book{
     display: flex;

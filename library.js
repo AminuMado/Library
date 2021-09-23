@@ -5,7 +5,8 @@ const inputTitle = document.getElementById("title");
 const inputPages = document.getElementById("pages");
 const inputRead = document.getElementById("toggleButton");
 const submitted = document.getElementById("submit");
-const booksContainer = [];
+const booksArray = [];
+const booksContainer = document.querySelector(".booksContainer")
 
 console.log(booksContainer)
 console.log(inputAuthor.value);
@@ -13,7 +14,14 @@ console.log(inputTitle);
 console.log(inputPages);
 console.log(inputRead.checked);
 console.log(submitted)
+function createElement(){
+    const newDiv= document.createElement("div");
+    newDiv.classList.add("book")
+    newDiv.textContent = "show me and i was created dynamically";
+    booksContainer.appendChild(newDiv)
 
+}
+createElement();
 
 submitted.addEventListener("click",function(){
     let bookAuthor = inputAuthor.value;
@@ -27,6 +35,8 @@ submitted.addEventListener("click",function(){
     }
     
 });
+
+
 
 //Constructor
 function Book(title,author,pages,read){
