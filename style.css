@@ -64,8 +64,8 @@ button {
 .toggleButton {
     position: relative;
     display: inline-block;
-    width: 100px;
-    height: 50px;
+    width: 40px;
+    height: 20px;
     margin: 0;
     vertical-align: top;
     background: #BF0603;
@@ -90,8 +90,8 @@ button {
     left: 3px;
     top: 1.5px;
   
-    width: 45px;
-    height: 45px;
+    width: 15px;
+    height: 15px;
     background-color: #ffd9e0;
     border-radius: 50%;
     
@@ -148,5 +148,55 @@ button {
     margin:5px 0 5px 0;
 }
 .bookToggle{
-    margin:5px 0 10px 0;
+    margin:5px 5px 10px 0;
+    align-self: flex-end;
+    font-size: 10px;
+}
+.toggleButton-Book {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 13px;
+    margin: 0;
+    vertical-align: top;
+    background: #BF0603;
+    border: 1px solid #BF0603;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+.toggleButton-Book:focus{
+    outline: none;
+}
+
+.toggleButton-Book::after {
+    content: "";
+  
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 1.5px;
+  
+    width: 8px;
+    height: 8px;
+    background-color: #ffd9e0;
+    border-radius: 50%;
+    
+  
+    transform: translateX(0);
+    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+.toggleButton-Book:checked::after {
+    transform: translateX(100%);
+    background-color: #b7efc5;
+    
+      
+}
+.toggleButton-Book:checked {
+    background-color:#008000;
+    border: 1px solid #008000;
 }
