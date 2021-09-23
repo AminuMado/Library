@@ -127,10 +127,19 @@ button {
 
 }
 .delete{
-	position: absolute;
-	left: 95%;
-	top: -15px;
-	/* margin: 0; */
+    position: absolute;
+    left: 92%;
+    top: -3%;
+    color: gray;
+    cursor: pointer;
+}
+.delete:hover{
+    color: #BF0603;
+    transition: all 0.3s ease;
+
+}
+.delete:active{
+    transform: scale(1.1);
 }
 .bookTitle{
     margin: 10px 0 5px 0;
