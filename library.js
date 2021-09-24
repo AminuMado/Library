@@ -24,12 +24,15 @@ function createElement(){
     deleteIcon.innerText = "delete_outline"
     const bookTitle = document.createElement("h2");
     bookTitle.classList.add("bookTitle");
+    bookTitle.textContent = "Alice In Wonderland";
     const bookAuthor = document.createElement("p");
     bookAuthor.classList.add("bookAuthor");
+    bookAuthor.textContent = "by: Lewis Caroll"
     const seperator = document.createElement("seperator");
     seperator.classList.add("seperator");
     const bookPages = document.createElement("p");
     bookPages.classList.add("bookPages")
+    bookPages.textContent = "Length: 500 pages"
     const bookToggle = document.createElement("p")
     bookToggle.classList.add("bookToggle")
     const toggleIcon = document.createElement("input");
@@ -38,6 +41,12 @@ function createElement(){
     booksContainer.appendChild(bookHolder)
     bookHolder.appendChild(deleteIconContainer)
     deleteIconContainer.appendChild(deleteIcon)
+    bookHolder.appendChild(bookTitle);
+    bookHolder.appendChild(bookAuthor);
+    bookHolder.appendChild(seperator);
+    bookHolder.appendChild(bookPages);
+    bookHolder.appendChild(bookToggle);
+    bookToggle.appendChild(toggleIcon);
 
 }
 createElement();
@@ -48,14 +57,19 @@ submitted.addEventListener("click",function(){
     let bookPages = inputPages.value;
     let bookRead = inputRead.checked;
     if (bookAuthor && bookTitle && bookPages){
-        booksContainer.push(new Book(bookAuthor,bookTitle,bookPages,bookRead));
-        console.log(booksContainer);
+        booksArray.push(new Book(bookAuthor,bookTitle,bookPages,bookRead));
+        console.log(booksArray);
         clearAll();
     }
     
 });
 
-
+function addBookToLibrary(){
+    createElement();
+    array.forEach(element => {
+        
+    });
+}
 
 //Constructor
 function Book(title,author,pages,read){
