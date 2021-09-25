@@ -19,28 +19,28 @@ function createElement(){
     bookHolder.classList.add("book");
     const deleteIconContainer = document.createElement("p");
     deleteIconContainer.classList.add("delete");
-    const deleteIcon = document.createElement("span")
-    deleteIcon.classList.add("material-icons-outlined")
-    deleteIcon.innerText = "delete_outline"
+    const deleteIcon = document.createElement("span");
+    deleteIcon.classList.add("material-icons-outlined");
+    deleteIcon.innerText = "delete_outline";
     const bookTitle = document.createElement("h2");
     bookTitle.classList.add("bookTitle");
     bookTitle.textContent = "Alice In Wonderland";
     const bookAuthor = document.createElement("p");
     bookAuthor.classList.add("bookAuthor");
-    bookAuthor.textContent = "by: Lewis Caroll"
+    bookAuthor.textContent = "by: Lewis Caroll";
     const seperator = document.createElement("seperator");
     seperator.classList.add("seperator");
     const bookPages = document.createElement("p");
-    bookPages.classList.add("bookPages")
-    bookPages.textContent = "Length: 500 pages"
-    const bookToggle = document.createElement("p")
-    bookToggle.classList.add("bookToggle")
+    bookPages.classList.add("bookPages");
+    bookPages.textContent = "Length: 500 pages";
+    const bookToggle = document.createElement("p");
+    bookToggle.classList.add("bookToggle");
     const toggleIcon = document.createElement("input");
-    toggleIcon.classList.add("toggleButton-Book")
-    toggleIcon.type = "checkbox"
-    booksContainer.appendChild(bookHolder)
-    bookHolder.appendChild(deleteIconContainer)
-    deleteIconContainer.appendChild(deleteIcon)
+    toggleIcon.classList.add("toggleButton-Book");
+    toggleIcon.type = "checkbox";
+    booksContainer.appendChild(bookHolder);
+    bookHolder.appendChild(deleteIconContainer);
+    deleteIconContainer.appendChild(deleteIcon);
     bookHolder.appendChild(bookTitle);
     bookHolder.appendChild(bookAuthor);
     bookHolder.appendChild(seperator);
@@ -49,7 +49,7 @@ function createElement(){
     bookToggle.appendChild(toggleIcon);
 
 }
-createElement();
+
 
 submitted.addEventListener("click",function(){
     let bookAuthor = inputAuthor.value;
@@ -59,16 +59,50 @@ submitted.addEventListener("click",function(){
     if (bookAuthor && bookTitle && bookPages){
         booksArray.push(new Book(bookAuthor,bookTitle,bookPages,bookRead));
         console.log(booksArray);
-        clearAll();
+        /* clearAll(); */
+         addBookToLibrary();
     }
     
 });
 
 function addBookToLibrary(){
-    createElement();
-    array.forEach(element => {
-        
-    });
+    booksContainer.innerHTML="";
+    for(let i = 0; i <= booksArray.length-1; i++){
+        const bookHolder = document.createElement("div");
+        bookHolder.classList.add("book");
+        const deleteIconContainer = document.createElement("p");
+        deleteIconContainer.classList.add("delete");
+        const deleteIcon = document.createElement("span");
+        deleteIcon.classList.add("material-icons-outlined");
+        deleteIcon.innerText = "delete_outline";
+        const bookTitle = document.createElement("h2");
+        bookTitle.classList.add("bookTitle");
+        bookTitle.textContent = booksArray[i].title;
+        const bookAuthor = document.createElement("p");
+        bookAuthor.classList.add("bookAuthor");
+        bookAuthor.textContent = `by: ${booksArray[i].author}`;
+        const seperator = document.createElement("seperator");
+        seperator.classList.add("seperator");
+        const bookPages = document.createElement("p");
+        bookPages.classList.add("bookPages");
+        bookPages.textContent = `Length: ${booksArray[i].pages} pages`;
+        const bookToggle = document.createElement("p");
+        bookToggle.classList.add("bookToggle");
+        const toggleIcon = document.createElement("input");
+        toggleIcon.classList.add("toggleButton-Book");
+        toggleIcon.type = "checkbox";
+        toggleIcon.checked = booksArray[i].read;
+        booksContainer.appendChild(bookHolder);
+        bookHolder.appendChild(deleteIconContainer);
+        deleteIconContainer.appendChild(deleteIcon);
+        bookHolder.appendChild(bookTitle);
+        bookHolder.appendChild(bookAuthor);
+        bookHolder.appendChild(seperator);
+        bookHolder.appendChild(bookPages);
+        bookHolder.appendChild(bookToggle);
+        bookToggle.appendChild(toggleIcon);
+    }
+
 }
 
 //Constructor
