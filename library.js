@@ -57,7 +57,7 @@ submitted.addEventListener("click",function(){
     let bookPages = inputPages.value;
     let bookRead = inputRead.checked;
     if (bookAuthor && bookTitle && bookPages){
-        booksArray.push(new Book(bookAuthor,bookTitle,bookPages,bookRead));
+        booksArray.push(new Book(bookTitle,bookAuthor,bookPages,bookRead));
         console.log(booksArray);
         /* clearAll(); */
          addBookToLibrary();
