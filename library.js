@@ -92,7 +92,6 @@ function addBookToLibrary(){
         const toggleIcon = document.createElement("input");
         toggleIcon.classList.add("toggleButton-Book");
         toggleIcon.type = "checkbox";
-        
         toggleIcon.checked = booksArray[i].read;
         booksContainer.appendChild(bookHolder);
         bookHolder.appendChild(deleteIconContainer);
