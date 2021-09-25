@@ -88,9 +88,11 @@ function addBookToLibrary(){
         bookPages.textContent = `Length: ${booksArray[i].pages} pages`;
         const bookToggle = document.createElement("p");
         bookToggle.classList.add("bookToggle");
+        bookToggle.textContent = "Mark as Read: ";
         const toggleIcon = document.createElement("input");
         toggleIcon.classList.add("toggleButton-Book");
         toggleIcon.type = "checkbox";
+        
         toggleIcon.checked = booksArray[i].read;
         booksContainer.appendChild(bookHolder);
         bookHolder.appendChild(deleteIconContainer);
