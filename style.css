@@ -66,6 +66,24 @@ button {
        between the labels and their text fields */
     margin-left: .5em;
 }
+
+/* Add Circle */
+span.add_circle{
+    color: chartreuse;
+    transition: all 0.3s ease-in;
+    position: fixed;
+    left: 92%;
+    top: 90%;
+    font-size: 50px;
+
+}
+.add_circle:hover{
+    transform: scale(1.4);
+    cursor: pointer;
+}
+.add_circle:active{
+    transform: scale(1.6);
+}
 .toggleButton {
     position: relative;
     display: inline-block;
