@@ -47,7 +47,7 @@ function createElement(){
     bookHolder.appendChild(bookPages);
     bookHolder.appendChild(bookToggle);
     bookToggle.appendChild(toggleIcon);
-
+    
 }
 
 
@@ -60,16 +60,31 @@ submitted.addEventListener("click",function(){
         booksArray.push(new Book(bookTitle,bookAuthor,bookPages,bookRead));
         console.log(booksArray);
         /* clearAll(); */
-         addBookToLibrary();
+        addBookToLibrary();
     }
     
 });
+booksContainer.addEventListener("click",function(event){
+    
+    if(event.target.classList == "material-icons-outlined"){
+        deleteBook(event.target.parentNode.parentNode.getAttribute("data-id"))
+    }
+    console.log(event.currentTarget)
+    console.log(event.target.parentNode)
+    console.log(event.target.parentNode.parentNode)
+    console.log(event.target.parentNode.parentNode.getAttribute("data-id"))
+})
+function deleteBook(bookId){
+    booksArray.splice(bookId,1);
+    addBookToLibrary()
+}
 
 function addBookToLibrary(){
     booksContainer.innerHTML="";
     for(let i = 0; i <= booksArray.length-1; i++){
         const bookHolder = document.createElement("div");
         bookHolder.classList.add("book");
+        bookHolder.setAttribute("data-Id", i);
         const deleteIconContainer = document.createElement("p");
         deleteIconContainer.classList.add("delete");
         const deleteIcon = document.createElement("span");
