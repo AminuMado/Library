@@ -21,28 +21,33 @@
         </nav>
     </header>
     <div>
-        <form onsubmit="return false">
-            <ul>
-                <li>
+        <form>
+            <div>
+                <h2>Add New Book</h2>
+                <div>
                   <label for="author">Author:</label>
-                  <input type="text" id="author" name="author" required/>
-                </li>
-                <li>
+                  <input type="text" id="author" name="author" required=""/>
+                </div>
+                <div>
                   <label for="title">Title:</label>
-                  <input type="text" id="title" name="title" required/>
-                </li>
-                <li>
+                  <input type="text" id="title" name="title" required=""/>
+                </div>
+                <div>
                   <label for="pages">Pages:</label>
-                  <input type="number" id="pages" required/>
-                </li>
-                <li>
-                    <label for="toggleButton" class="text">Read</label>
-                    <input type="checkbox" id="toggleButton" class="toggleButton" value="off">
-                </li>
-                <li>
+                  <input type="number" id="pages" required=""/>
+                </div>
+                <div>
+                    <label for="toggleButton" class="text">Have you read this book? 
+                        <input type="checkbox" id="toggleButton" class="toggleButton" value="off">
+                    </label>
+                </div>
+                <div>
                     <button id="submit">Submit</button>
-                </li>
-            </ul>
+                </div>
+                <div>
+                    <button id="cancel" type="button">Cancel</button>
+                </div>
+            </div>
         </form>
     </div>
     <div class="booksContainer">
