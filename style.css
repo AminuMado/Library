@@ -6,11 +6,20 @@ body{
 }
 form{
     margin-bottom: 20px;
-	border: 2px solid black;
-	border-radius: 20px;
-	padding: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 30px;
     background-color: beige;
-	
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    z-index: 2;
+    min-width: 282px;
+    transition: all 0.3s ease-in-out;
+}
+form.active{
+    transform: translate(-50%,-50%) scale(1);
 }
 form > div {
 	padding: 10px;
@@ -45,13 +54,19 @@ button {
 .overlay {
     position: fixed;
 	background: rgba(0,0,0,0.5);
-	z-index: 1;
-	width: 100vw;
-	height: 100vh;
-	margin: 0;
-	padding: 0;
+	opacity: 0;
 	left: 0;
+    right:0;
+    bottom:0;
 	top: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+.overlay.active{
+    opacity:1;
+    pointer-events: all;
+
 }
 /* Add Circle */
 span.add_circle{
@@ -63,6 +78,9 @@ span.add_circle{
     font-size: 50px;
 
 }
+span.active{
+    transform: scale(0);
+}
 .add_circle:hover{
     transform: scale(1.4);
     cursor: pointer;
@@ -70,6 +88,7 @@ span.add_circle{
 .add_circle:active{
     transform: scale(1.6);
 }
+
 .toggleButton {
     position: relative;
     display: inline-block;
