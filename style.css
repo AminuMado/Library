@@ -68,14 +68,15 @@ button {
     pointer-events: all;
 
 }
-/* Add Circle */
+/* Add New Book Button */
 span.add_circle{
     color: chartreuse;
     transition: all 0.2s ease-in-out;
     position: fixed;
-    left: 92%;
-    top: 90%;
+    bottom: 20px;
+    right: 20px;
     font-size: 50px;
+    z-index: 1;
 
 }
 span.active{
@@ -243,7 +244,7 @@ span.active{
 }
 /* Footer Section */
 .footer{
-    /* position: absolute; */
+    position: absolute;
     bottom: 0;
     left: 0;
     display: flex;
