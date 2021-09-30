@@ -7,13 +7,40 @@ const inputRead = document.getElementById("toggleButton");
 const submitted = document.getElementById("submit");
 const booksArray = [];
 const booksContainer = document.querySelector(".booksContainer")
-
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector("form");
+const addButton = document.querySelector(".add_circle");
+const modalSubmitButton = document.querySelector("#submit");
+const modalCancelButton = document.querySelector("#cancel");
+/* eventListeners on the add button */
+addButton.addEventListener("click",function(e){
+    addModal();
+})
+/* Event Listerners on the modal  */
+modal.addEventListener("click",function(event){
+    if(event.target.id == "cancel"){
+        removeModal()
+    };
+})
 console.log(booksContainer)
 console.log(inputAuthor.value);
 console.log(inputTitle);
 console.log(inputPages);
 console.log(inputRead.checked);
-console.log(submitted)
+console.log(submitted);
+
+function addModal(){
+    overlay.classList.add("active");
+    modal.classList.add("active");
+    addButton.classList.add("active"); 
+}
+function removeModal(){
+    overlay.classList.remove("active");
+    modal.classList.remove("active");
+    addButton.classList.remove("active");
+    
+}
+
 function createElement(){
     const bookHolder = document.createElement("div");
     bookHolder.classList.add("book");
@@ -61,6 +88,8 @@ submitted.addEventListener("click",function(){
         console.log(booksArray);
         /* clearAll(); */
         addBookToLibrary();
+        removeModal();
+
     }
     
 });
