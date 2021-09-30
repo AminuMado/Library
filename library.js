@@ -12,71 +12,18 @@ const modal = document.querySelector("form");
 const addButton = document.querySelector(".add_circle");
 const modalSubmitButton = document.querySelector("#submit");
 const modalCancelButton = document.querySelector("#cancel");
-/* eventListeners on the add button */
-addButton.addEventListener("click",function(e){
-    addModal();
-})
-/* Event Listerners on the modal  */
+
+
+/* Event Listerners */
 modal.addEventListener("click",function(event){
     if(event.target.id == "cancel"){
         removeModal()
     };
 })
-console.log(booksContainer)
-console.log(inputAuthor.value);
-console.log(inputTitle);
-console.log(inputPages);
-console.log(inputRead.checked);
-console.log(submitted);
 
-function addModal(){
-    overlay.classList.add("active");
-    modal.classList.add("active");
-    addButton.classList.add("active"); 
-}
-function removeModal(){
-    overlay.classList.remove("active");
-    modal.classList.remove("active");
-    addButton.classList.remove("active");
-    
-}
-
-function createElement(){
-    const bookHolder = document.createElement("div");
-    bookHolder.classList.add("book");
-    const deleteIconContainer = document.createElement("p");
-    deleteIconContainer.classList.add("delete");
-    const deleteIcon = document.createElement("span");
-    deleteIcon.classList.add("material-icons-outlined");
-    deleteIcon.innerText = "delete_outline";
-    const bookTitle = document.createElement("h2");
-    bookTitle.classList.add("bookTitle");
-    bookTitle.textContent = "Alice In Wonderland";
-    const bookAuthor = document.createElement("p");
-    bookAuthor.classList.add("bookAuthor");
-    bookAuthor.textContent = "by: Lewis Caroll";
-    const seperator = document.createElement("seperator");
-    seperator.classList.add("seperator");
-    const bookPages = document.createElement("p");
-    bookPages.classList.add("bookPages");
-    bookPages.textContent = "Length: 500 pages";
-    const bookToggle = document.createElement("p");
-    bookToggle.classList.add("bookToggle");
-    const toggleIcon = document.createElement("input");
-    toggleIcon.classList.add("toggleButton-Book");
-    toggleIcon.type = "checkbox";
-    booksContainer.appendChild(bookHolder);
-    bookHolder.appendChild(deleteIconContainer);
-    deleteIconContainer.appendChild(deleteIcon);
-    bookHolder.appendChild(bookTitle);
-    bookHolder.appendChild(bookAuthor);
-    bookHolder.appendChild(seperator);
-    bookHolder.appendChild(bookPages);
-    bookHolder.appendChild(bookToggle);
-    bookToggle.appendChild(toggleIcon);
-    
-}
-
+addButton.addEventListener("click",function(e){
+    addModal();
+})
 
 submitted.addEventListener("click",function(){
     let bookAuthor = inputAuthor.value;
@@ -89,23 +36,54 @@ submitted.addEventListener("click",function(){
         /* clearAll(); */
         addBookToLibrary();
         removeModal();
-
-    }
+        
+};
     
 });
+
 booksContainer.addEventListener("click",function(event){
     
     if(event.target.classList == "material-icons-outlined"){
         deleteBook(event.target.parentNode.parentNode.getAttribute("data-id"))
     }
-    console.log(event.currentTarget)
-    console.log(event.target.parentNode)
-    console.log(event.target.parentNode.parentNode)
-    console.log(event.target.parentNode.parentNode.getAttribute("data-id"))
-})
+});
+
+
+
+//Constructor
+function Book(title,author,pages,read){
+    this.title = title,
+    this.author = author,
+    this.pages = pages,
+    this.read = read
+}
+
+
+//functions
+
+function clearAll(){
+    inputAuthor.value = "";
+    inputTitle.value ="";
+    inputPages.value ="";
+    inputRead.checked = false;
+}
+
 function deleteBook(bookId){
     booksArray.splice(bookId,1);
     addBookToLibrary()
+}
+
+function addModal(){
+    overlay.classList.add("active");
+    modal.classList.add("active");
+    addButton.classList.add("active"); 
+}
+
+function removeModal(){
+    overlay.classList.remove("active");
+    modal.classList.remove("active");
+    addButton.classList.remove("active");
+    
 }
 
 function addBookToLibrary(){
@@ -147,23 +125,5 @@ function addBookToLibrary(){
         bookHolder.appendChild(bookToggle);
         bookToggle.appendChild(toggleIcon);
     }
-
-}
-
-//Constructor
-function Book(title,author,pages,read){
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read
-}
-
-let book1 = new Book("One Piece","Oda Sensei",1500,true);
-
-//functions
-function clearAll(){
-inputAuthor.value = "";
-inputTitle.value ="";
-inputPages.value ="";
-inputRead.checked = false;
+    
 }
