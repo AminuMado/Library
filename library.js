@@ -1,5 +1,5 @@
 
-//DOM Elements
+/* DOM Elements */
 const inputAuthor = document.getElementById("author");
 const inputTitle = document.getElementById("title");
 const inputPages = document.getElementById("pages");
@@ -10,7 +10,6 @@ const booksContainer = document.querySelector(".booksContainer")
 const overlay = document.querySelector(".overlay");
 const modal = document.querySelector("form");
 const addButton = document.querySelector(".add_circle");
-const modalSubmitButton = document.querySelector("#submit");
 const modalCancelButton = document.querySelector("#cancel");
 
 
@@ -19,38 +18,36 @@ modal.addEventListener("click",function(event){
     if(event.target.id == "cancel"){
         removeModal()
     };
-})
+});
 
 addButton.addEventListener("click",function(e){
+    clearAll();
     addModal();
-})
+});
 
-submitted.addEventListener("click",function(){
+submitted.addEventListener("click",() => {
     let bookAuthor = inputAuthor.value;
     let bookTitle = inputTitle.value;
     let bookPages = inputPages.value;
     let bookRead = inputRead.checked;
     if (bookAuthor && bookTitle && bookPages){
         booksArray.push(new Book(bookTitle,bookAuthor,bookPages,bookRead));
-        console.log(booksArray);
-        /* clearAll(); */
         addBookToLibrary();
-        removeModal();
-        
-};
-    
+        removeModal();   
+    };  
 });
 
-booksContainer.addEventListener("click",function(event){
+booksContainer.addEventListener("click",(event) => {
     
-    if(event.target.classList == "material-icons-outlined"){
+if(event.target.classList == "material-icons-outlined"){
         deleteBook(event.target.parentNode.parentNode.getAttribute("data-id"))
     }
 });
 
 
 
-//Constructor
+/* Constructor */
+
 function Book(title,author,pages,read){
     this.title = title,
     this.author = author,
@@ -58,8 +55,7 @@ function Book(title,author,pages,read){
     this.read = read
 }
 
-
-//functions
+/* Functions */
 
 function clearAll(){
     inputAuthor.value = "";
@@ -82,8 +78,7 @@ function addModal(){
 function removeModal(){
     overlay.classList.remove("active");
     modal.classList.remove("active");
-    addButton.classList.remove("active");
-    
+    addButton.classList.remove("active");    
 }
 
 function addBookToLibrary(){
@@ -125,5 +120,4 @@ function addBookToLibrary(){
         bookHolder.appendChild(bookToggle);
         bookToggle.appendChild(toggleIcon);
     }
-    
 }
