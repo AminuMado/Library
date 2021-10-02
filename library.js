@@ -5,7 +5,7 @@ const inputTitle = document.getElementById("title");
 const inputPages = document.getElementById("pages");
 const inputRead = document.getElementById("toggleButton");
 const submitted = document.getElementById("submit");
-const booksArray = [];
+let booksArray = [];
 const booksContainer = document.querySelector(".booksContainer")
 const overlay = document.querySelector(".overlay");
 const modal = document.querySelector("form");
@@ -19,6 +19,7 @@ if (localStorage.getItem('books') === null) {
   } else {
     const booksFromStorage = JSON.parse(localStorage.getItem('books'));
     booksArray = booksFromStorage;
+    addBookToLibrary();
   }
 /* Event Listerners */
 modal.addEventListener("click",function(event){
@@ -40,7 +41,7 @@ submitted.addEventListener("click",() => {
     if (bookAuthor && bookTitle && bookPages){
         booksArray.push(new Book(bookTitle,bookAuthor,bookPages,bookRead));
         addBookToLibrary();
-        localStorage.setItem('books', JSON.stringify(myLibrary)); //This saves the book in the local storage
+        localStorage.setItem('books', JSON.stringify(booksArray)); //This saves the book in the local storage
         removeModal();   
     };  
 });
@@ -75,6 +76,7 @@ function clearAll(){
 function deleteBook(bookId){
     booksArray.splice(bookId,1);
     addBookToLibrary()
+    localStorage.setItem('books', JSON.stringify(booksArray)); //This saves the book in the local storage. This is also here because it updates the deleted book
 }
 
 function addModal(){
