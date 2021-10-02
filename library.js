@@ -13,6 +13,13 @@ const addButton = document.querySelector(".add_circle");
 const modalCancelButton = document.querySelector("#cancel");
 
 
+/* Local Storage */
+if (localStorage.getItem('books') === null) {
+    booksArray = [];
+  } else {
+    const booksFromStorage = JSON.parse(localStorage.getItem('books'));
+    booksArray = booksFromStorage;
+  }
 /* Event Listerners */
 modal.addEventListener("click",function(event){
     if(event.target.id == "cancel"){
@@ -33,6 +40,7 @@ submitted.addEventListener("click",() => {
     if (bookAuthor && bookTitle && bookPages){
         booksArray.push(new Book(bookTitle,bookAuthor,bookPages,bookRead));
         addBookToLibrary();
+        localStorage.setItem('books', JSON.stringify(myLibrary)); //This saves the book in the local storage
         removeModal();   
     };  
 });
