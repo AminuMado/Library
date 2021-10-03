@@ -9,7 +9,7 @@ This project has the following fuctionalities:
 
 From The Odin Project's [curriculum](https://www.theodinproject.com/courses/javascript/lessons/library).
 
-🔗 **Live preview:** [here](https://aminumado.github.io/library/)
+🔗 **Live preview:** [here](https://aminumado.github.io/Library/)
 
 ## Built with
 
