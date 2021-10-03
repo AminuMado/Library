@@ -28,7 +28,7 @@ From The Odin Project's [curriculum](https://www.theodinproject.com/courses/java
 ### Third party code
 
 * [Google Fonts](https://fonts.google.com/)
-* [Coolors]     (https://coolors.co)
+* [Coolors](https://coolors.co/)
 
 ## Outcome
 
