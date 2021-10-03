@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Library</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> <!-- This is for the fonts  gotten from googlefonts-->
     <script src="library.js" defer></script>
 </head>
@@ -13,14 +16,18 @@
     <header>
         <nav>
             <h1> My Library</h1>
-            <button>Log in</button>
             <span class="material-icons-outlined add_circle">
                 add_circle
             </span>
-               
         </nav>
     </header>
-    <div>
+    <div class="info">
+        <div class="desc">
+            <p> This is a simple library web application built on HTML, CSS, and vanilla JavaScript, all data is stored in LocalStorage.</p>
+            <p>It was created in partial completion of The Odin Project's Full Stack JavaScript Path Curriculum.</p>
+            
+        </div>
+      </div>
         <div class="overlay"></div>
         <form onsubmit="return false">
             <div>
