@@ -22,13 +22,13 @@ if (localStorage.getItem('books') === null) {
     addBookToLibrary();
   }
 /* Event Listerners */
-modal.addEventListener("click",function(event){
+modal.addEventListener("click",(event)=> {
     if(event.target.id == "cancel"){
         removeModal()
     };
 });
 
-addButton.addEventListener("click",function(e){
+addButton.addEventListener("click",(e) => {
     clearAll();
     addModal();
 });
@@ -68,8 +68,8 @@ function Book(title,author,pages,read){
 
 function clearAll(){
     inputAuthor.value = "";
-    inputTitle.value ="";
-    inputPages.value ="";
+    inputTitle.value = "";
+    inputPages.value = "";
     inputRead.checked = false;
 }
 
