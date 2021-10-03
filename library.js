@@ -92,7 +92,7 @@ function removeModal(){
 }
 
 function addBookToLibrary(){
-    booksContainer.innerHTML="";
+    booksContainer.textContent="";
     for(let i = 0; i <= booksArray.length-1; i++){
         const bookHolder = document.createElement("div");
         bookHolder.classList.add("book");
