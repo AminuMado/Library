@@ -35,10 +35,10 @@ nav h1{
 }
 form{
     margin-bottom: 20px;
-    border: 2px solid black;
+    border: 2px solid whitesmoke;
     border-radius: 20px;
     padding: 30px;
-    background-color: dimgray;
+    background-color: black;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -46,7 +46,7 @@ form{
     z-index: 2;
     min-width: 282px;
     transition: all 0.3s ease-in-out;
-    color: gainsboro;
+    color: whitesmoke;
 }
 form.active{
     transform: translate(-50%,-50%) scale(1);
@@ -79,6 +79,7 @@ label {
 button {
   width: 60%;
   margin: 0 auto;
+  padding: 1px;
 }
 /* overlay */
 .overlay {
