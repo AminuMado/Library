@@ -51,7 +51,7 @@ booksContainer.addEventListener("click",(event) => {
 if(event.target.classList == "material-icons-outlined"){
         deleteBook(event.target.parentNode.parentNode.getAttribute("data-id"))
     }
-if(event.target.classList == "toggleButton-Book"){
+else if(event.target.classList == "toggleButton-Book"){
     event.target.checked ? event.target.parentNode.parentNode.classList.add("marked-as-read") : event.target.parentNode.parentNode.classList.remove("marked-as-read")
     }
 });
@@ -134,7 +134,7 @@ function addBookToLibrary(){
         bookToggle.appendChild(toggleIcon);
         if(toggleIcon.checked == true){
             bookHolder.classList.add("marked-as-read")
-        }
+        };
 
     }
 }
