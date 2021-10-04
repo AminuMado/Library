@@ -27,12 +27,7 @@ nav h1{
 	border: 1px solid ivory;
 	border-radius: 5px;
 }
-.stats {
-	flex: 1 1 350px;
-	padding: 0 16px 16px;
-	border: 1px solid ivory;
-	border-radius: 5px;
-}
+
 form{
     margin-bottom: 20px;
     border: 4px solid whitesmoke;
@@ -120,7 +115,9 @@ span.active{
 .add_circle:active{
     transform: scale(1.6);
 }
-
+.marked-as-read{
+    color:gray;
+}
 .toggleButton {
     position: relative;
     display: inline-block;
