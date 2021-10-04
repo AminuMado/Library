@@ -115,7 +115,7 @@ span.active{
 .add_circle:active{
     transform: scale(1.6);
 }
-.marked-as-read{
+.book.marked-as-read{
     color:gray;
 }
 .toggleButton {
